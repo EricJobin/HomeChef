@@ -93,7 +93,6 @@ var bookdata = [
 	}
 ];
 
-
 // Sample data list for dev use
 // {
 // 	client: "",
@@ -110,8 +109,8 @@ var bookdata = [
 // }
 
 //Render bookings data as Cards on Chef Home Page in #bookdiv
-var tbd = bookdata;
-console.log(tbd);
+console.log(bookdata);
+var viewid, clientInfo, eventlogger;
 
 function renderBookings() {
 	if (bookdata.length > 0){
@@ -121,11 +120,11 @@ function renderBookings() {
 		$("#bookdiv").append(`<div class="row" id="bookRow${rowCount}"></div>`);
 		for (var x = 0; x < bookdata.length; x++){
 			$(`#bookRow${rowCount}`).append(`
-			<div class="col-3">
-				<div class="card shadow">
-					<div class="card-body bookingCard" data-toggle="modal" data-target="#myBookingModal" id="booking${x}">
-						<h4>${bookdata[x].client}</h4> 
-			</div></div></div>`);
+				<div class="col-3">
+					<div class="card shadow">
+						<div class="card-body bookingCard" data-toggle="modal" data-target="#myBookingModal" id="booking${x}">
+							<h4>${bookdata[x].client}</h4> 
+				</div></div></div>`);
 			colCount++;
 			if (colCount == 4){
 				colCount = 0;
@@ -138,12 +137,13 @@ function renderBookings() {
 
 function popUpBookingModal(){
 	$(".bookingCard").on("click", function(){
+		eventlogger=event;
+		console.log(this);
 		$(".modal-title").empty();
 		$(".modal-body").empty();
 		//viewid extracts the place in the array where what we're looking at occurs
-		viewid = parseInt(event.path[1].id.replace('booking',''))
+		viewid = parseInt(this.id.replace('booking',''))
 		clientInfo= bookdata[viewid];
-		// $(".modal-title").empty();
 		$(".modal-title").append(`${clientInfo.client}<br>`);
 		$(".modal-body").append(`Location: ${clientInfo.address}, ${clientInfo.city}<br>`);
 		$(".modal-body").append(`When: ${clientInfo.time} on ${clientInfo.date}<br>`);
@@ -153,35 +153,7 @@ function popUpBookingModal(){
 	});
 }
 
-
 $(document).ready(function() {
 	renderBookings()
 	popUpBookingModal()
-
-
-	
 });
-//<div class="col-12"></div>
-
-
-
-// $("#bffname").empty();
-// $("#bffname").append(`${data.userName}`);
-
-//Card Template:
-
-// {/* <div class="card shadow">
-// 	<div class="card-header">
-// 		<h3>Calendar</h3>
-// 	</div>
-// 	<div class="card-body">
-// 		<div class="row">
-// 			<div class="col-12">
-// 			</div>
-// 		</div>
-// 	</div>
-// </div> */}
-
-// For opening Modals: data-toggle="modal" data-target="#myBookingModal"
-
-//<div class="card shadow"><div class="card-body"> content </div></div>
