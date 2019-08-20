@@ -3,6 +3,16 @@ var db = require("../models");
 
 //routes -----------------------------------------------------------
 module.exports = function(app) {
+
+	// GET route for getting all of the customers
+	app.get("/api/customers/", function(req, res) {
+		db.Customer.findAll({})
+			.then(function(dbCustomer) {
+				res.json(dbCustomer);
+			});
+	});
+
+
 	// Get route for retrieving a single customer
 	app.get("/api/customers/:id", function(req, res) {
 		db.Customer.findOne({
@@ -15,11 +25,20 @@ module.exports = function(app) {
 		});
 	});
 
+
 	// POST route for saving a new customer
 	app.post("/api/customers", function(req, res) {
-		db.Customers.create(req.body).then(function(dbCustomer) {
-			res.json(dbCustomer);
-		});
+		console.log(req.body);
+		db.Customer.create({
+			firstName: req.body.firstName,
+			lastName: req.body.lastName,
+			email: req.body.email,
+			phone: req.body.phone,
+			location: req.body.location
+		})
+			.then(function(dbCustomer) {
+				res.json(dbCustomer);
+			});
 	});
 
 	// Delete an customer by id
