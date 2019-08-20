@@ -14,7 +14,15 @@ module.exports = function(sequelize,DataTypes){
 			validate: {
 				len: [1]
 			}
-		}
+		},
+	/*	createdAt:{   
+			type: DataTypes.DATE,
+			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")
+		},
+		updatedAt:{
+			type: DataTypes.DATE,
+			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")	
+		}*/
 	});
     
 	return foodRest;

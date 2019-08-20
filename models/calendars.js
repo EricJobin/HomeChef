@@ -21,8 +21,18 @@ module.exports = function(sequelize,DataTypes){
 			type: DataTypes.STRING,
         
 		},
-        
-  
+		/*
+		createdAt:{   
+			type: DataTypes.DATE,
+			allowNull: false,
+			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")
+		},
+		updatedAt:{
+			type: DataTypes.DATE,
+			allowNull: false,
+			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")	
+		}        
+		*/
 	});
    
 	return Calendars;

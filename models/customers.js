@@ -4,14 +4,14 @@ module.exports = function(sequelize,DataTypes){
 			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
-				len: [1]
+				len: [35]
 			}
 		},
 		lastName: {
 			type: DataTypes.TEXT,
 			allowNull: false,
 			validate: {
-				len: [1]
+				len: [35]
 			}
 		},
 		email:{
@@ -22,13 +22,24 @@ module.exports = function(sequelize,DataTypes){
 			}
 		},   
 		phone:{
-			type: DataTypes.INTEGER,
+			type: DataTypes.DECIMAL,
 
 		},
 		location: {
 			type: DataTypes.STRING,
         
 		},
+		/*	createdAt:{   
+			type: DataTypes.DATE,
+			allowNull: false,
+			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")
+		},
+		updatedAt:{
+			type: DataTypes.DATE,
+			allowNull: false,
+			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")	
+		}
+		*/
       
 	});
    

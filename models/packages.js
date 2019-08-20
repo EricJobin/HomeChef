@@ -16,8 +16,18 @@ module.exports = function(sequelize,DataTypes){
 		},
 		timing:{
 			type: DataTypes.STRING
-		},   
-       
+		},
+		/*createdAt:{   
+			type: DataTypes.DATE,
+			allowNull: false,
+			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")
+		},
+		updatedAt:{
+			type: DataTypes.DATE,
+			allowNull: false,
+			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")	
+		}   
+        */
   
 	});
    
