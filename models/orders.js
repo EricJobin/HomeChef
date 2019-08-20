@@ -3,16 +3,12 @@ module.exports = function(sequelize,DataTypes){
 		startdate: {
 			type: DataTypes.DATE,
 			allowNull: false,
-			validate: {
-				len: [1]
-			}
+			
 		},
 		enddate: {
 			type: DataTypes.DATE,
 			allowNull: false,
-			validate: {
-				len: [1]
-			}
+			
 		},
 		timing:{
 			type: DataTypes.STRING
