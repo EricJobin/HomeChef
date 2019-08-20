@@ -14,7 +14,7 @@ module.exports = function(app) {
 
 
 	// Get route for retrieving a single customer
-	app.get("/api/customers/:id", function(req, res) {
+	app.get("/api/customers/:id?", function(req, res) {
 		db.Customer.findOne({
 			where: {
 				id: req.params.id
@@ -63,6 +63,10 @@ module.exports = function(app) {
 			}).then(function(dbCustomer) {
 			res.json(dbCustomer);
 		});
-	});
+  });
+  
+//testing routes===============================
+  app.
+
 
 };
