@@ -84,24 +84,60 @@ var bookdata = [
 // }
 
 //Render bookings data as Cards on Chef Home Page in #bookdiv
+var tbd = bookdata;
+console.log(tbd);
 
-console.log(bookdata);
+function renderBookings() {
+	if (bookdata.length > 0){
+		console.log("in routine");
+		var rowCount =1;
+		var colCount =0;
+		$("#bookdiv").empty();
+		$("#bookdiv").append(`<div class="row" id="bookRow${rowCount}"></div>`);
+		for (var x = 0; x < bookdata.length; x++){
+			$(`#bookRow${rowCount}`).append(`<div class="col-3" id="booking${x}">
+			<div class="card shadow"><div class="card-body"><h4>${bookdata[x].client}</h4> 
+			</div></div></div>`);
+			colCount++;
+			if (colCount == 4){
+				colCount = 0;
+				rowCount++
+				$("#bookdiv").append(`<div class="row" id="bookRow${rowCount}"></div>`);
+			}
+		}
+	}
+}
 
 
 
+
+
+
+$(document).ready(function() {
+	renderBookings()
+	
+});
+//<div class="col-12"></div>
+
+
+
+// $("#bffname").empty();
+// $("#bffname").append(`${data.userName}`);
 
 //Card Template:
 
-{/* <div class="card shadow">
-	<div class="card-header">
-		<h3>Calendar</h3>
-	</div>
-	<div class="card-body">
-		<div class="row">
-			<div class="col-12">
-			</div>
-		</div>
-	</div>
-</div> */}
+// {/* <div class="card shadow">
+// 	<div class="card-header">
+// 		<h3>Calendar</h3>
+// 	</div>
+// 	<div class="card-body">
+// 		<div class="row">
+// 			<div class="col-12">
+// 			</div>
+// 		</div>
+// 	</div>
+// </div> */}
 
 // For opening Modals: data-toggle="modal" data-target="#myModal"
+
+//<div class="card shadow"><div class="card-body"> content </div></div>
