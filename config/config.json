@@ -1,10 +1,20 @@
 {
+
+  "development2": {
+    "username": "root",
+    "password": "P@ssword",
+    "database": "homechef",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+
 	"development": {
 		"username": "newuser",
 		"password": "r00tr00t",
 		"database": "homechef",
 		"host": "localhost",
 		"dialect": "mysql"
+
   },
 	"test": {
 		"username": "root",
