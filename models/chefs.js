@@ -8,7 +8,7 @@ module.exports = function(sequelize,DataTypes){
 			}
 		},
 		lastName: {
-			type: DataTypes.TEXT,
+			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
 				len: [35]
@@ -24,6 +24,13 @@ module.exports = function(sequelize,DataTypes){
 		rates:{
 			type: DataTypes.INTEGER
 		},
+		profilePic:{
+			type: DataTypes.STRING,
+		},
+		bioData:{
+			type: DataTypes.TEXT,
+
+		}
 		/*
 		createdAt:{   
 			type: DataTypes.DATE,
@@ -37,7 +44,18 @@ module.exports = function(sequelize,DataTypes){
 		}
 		*/
 	});
+	
+	Chefs.associate = function(models) {
+		// Associating Chefs with orders
+		// When an Chef is deleted, also delete any associated Order
+		Chefs.hasMany(models.Orders, {
+		  onDelete: "cascade"
+		});
+	  };	
+		
+
+
    
 	return Chefs;
 };
-  
+ 
