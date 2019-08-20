@@ -64,6 +64,32 @@ var bookdata = [
 		meal: "Steak & Potatoes",
 		diet: "Peanut Allergy",
 		numPeople: "1",
+	},
+	{
+		client: "Dave Dunway",
+		city: "Toronto",
+		address: "333 Palmerston Blvd",
+		date: "August 27",
+		time: "8pm",
+		stove: "None",
+		hobbs: 0,
+		oven: "None",
+		meal: "Steak & Potatoes",
+		diet: "Peanut Allergy",
+		numPeople: "1",
+	},
+	{
+		client: "Eddie Edwards",
+		city: "Toronto",
+		address: "333 Palmerston Blvd",
+		date: "August 27",
+		time: "8pm",
+		stove: "None",
+		hobbs: 0,
+		oven: "None",
+		meal: "Steak & Potatoes",
+		diet: "Peanut Allergy",
+		numPeople: "1",
 	}
 ];
 
@@ -89,14 +115,16 @@ console.log(tbd);
 
 function renderBookings() {
 	if (bookdata.length > 0){
-		console.log("in routine");
 		var rowCount =1;
 		var colCount =0;
 		$("#bookdiv").empty();
 		$("#bookdiv").append(`<div class="row" id="bookRow${rowCount}"></div>`);
 		for (var x = 0; x < bookdata.length; x++){
-			$(`#bookRow${rowCount}`).append(`<div class="col-3" id="booking${x}">
-			<div class="card shadow"><div class="card-body"><h4>${bookdata[x].client}</h4> 
+			$(`#bookRow${rowCount}`).append(`
+			<div class="col-3">
+				<div class="card shadow">
+					<div class="card-body bookingCard" data-toggle="modal" data-target="#myBookingModal" id="booking${x}">
+						<h4>${bookdata[x].client}</h4> 
 			</div></div></div>`);
 			colCount++;
 			if (colCount == 4){
@@ -108,13 +136,29 @@ function renderBookings() {
 	}
 }
 
-
-
-
+function popUpBookingModal(){
+	$(".bookingCard").on("click", function(){
+		$(".modal-title").empty();
+		$(".modal-body").empty();
+		//viewid extracts the place in the array where what we're looking at occurs
+		viewid = parseInt(event.path[1].id.replace('booking',''))
+		clientInfo= bookdata[viewid];
+		// $(".modal-title").empty();
+		$(".modal-title").append(`${clientInfo.client}<br>`);
+		$(".modal-body").append(`Location: ${clientInfo.address}, ${clientInfo.city}<br>`);
+		$(".modal-body").append(`When: ${clientInfo.time} on ${clientInfo.date}<br>`);
+		$(".modal-body").append(`Equipment: Stove: ${clientInfo.stove} with ${clientInfo.hobbs} hobs<br> Oven: ${clientInfo.oven}<br>`);
+		$(".modal-body").append(`Desired Meal: ${clientInfo.meal} for ${clientInfo.numPeople} people<br>`);
+		$(".modal-body").append(`Dietary Restrictions: ${clientInfo.diet}<br>`);
+	});
+}
 
 
 $(document).ready(function() {
 	renderBookings()
+	popUpBookingModal()
+
+
 	
 });
 //<div class="col-12"></div>
@@ -138,6 +182,6 @@ $(document).ready(function() {
 // 	</div>
 // </div> */}
 
-// For opening Modals: data-toggle="modal" data-target="#myModal"
+// For opening Modals: data-toggle="modal" data-target="#myBookingModal"
 
 //<div class="card shadow"><div class="card-body"> content </div></div>
