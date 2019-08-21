@@ -25,6 +25,7 @@ $(document).ready(function() {
 			lastName: $("#lastName").val().trim(),
 			firstname: $("#firstName").val().trim(),
 			email: $("#email").val().trim(),
+			password:$("password").val().trim(),
 			phone: $("#phone").val().trim(),
 			address: $("#address").val().trim(),
 			city: $("#city").val().trim(),
@@ -32,9 +33,19 @@ $(document).ready(function() {
 			hobNumber: $("#hobNumber").val().trim(),
 			Oven: $("#haveOven").val().trim(),
 			foodRes: $("#foodRes").val().trim(),
-			foodType: $("#foodType").val().trim(),
+			foodType: $("#foodType").val().trim()
 		};
 		console.log(newCustomer);
+
+		var newUser = {
+			userType:Customer,
+			email: $("#email").val().trim(),
+			password:$("password").val().trim()
+		};
+		console.log(newUser);
+
+
+
 		// if (updating) {
 		// 	newCustomer.id = CustomerId;
 		// 	update(newPost);
@@ -43,7 +54,8 @@ $(document).ready(function() {
 		// 	submitPost(newPost);
 		// }
 		submitCustomer(newCustomer);
-
+		submitUser(newUser);
+		
 	}); 
 
 
@@ -55,5 +67,20 @@ $(document).ready(function() {
 		});
 	}
 
+	function submitUser(user) {
+		$.post("/api/customerSignUp", user)
+		  .then(function(data) {
+			window.location.replace("/customers");
+			// If there's an error, handle it by throwing up a bootstrap alert
+		  })
+		  .catch(handleLoginErr);
+	  }
+	
+	  function handleLoginErr(err) {
+		$("#alert .msg").text(err.responseJSON);
+		$("#alert").fadeIn(500);
+	  }
+	
+	
 });
   
