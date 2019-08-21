@@ -31,6 +31,7 @@ module.exports = function(sequelize,DataTypes){
 			type: DataTypes.TEXT,
 
 		}
+		
 		/*
 		createdAt:{   
 			type: DataTypes.DATE,
