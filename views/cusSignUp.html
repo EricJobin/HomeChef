@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<!-- Our Java -->
-    <!-- <script src="../public/js/chefSignUp.js"></script> -->
+    <script src="../public/js/cudtomerTest.js"></script>
 
 </head>
 <body>
@@ -38,12 +38,16 @@
 										</div>
 										<div class="form-group">
 											<label for="userName"><i class="fas fa-user"></i> Last Name</label>
-											<input type="text" class="form-control" id="firstName" placeholder="Enter your last name">
+											<input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
 										</div>
 										<div class="form-group">
 											<label for="email"><i class="fas fa-envelope"></i> Email address</label>
 											<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                                         </div>
+                                        <div class="form-group">
+                                                <label for="phone"><i class="fa fa-phone-square"></i> Phone number</label>
+                                                <input type="phone" class="form-control" id="phone"  placeholder="Enter your phone number">
+                                            </div>
                                         <div class="form-group">
 											<label for="address"><i class="fas fa-map"></i> Address</label>
 											<input type="text" class="form-control" id="address" placeholder="Enter your address">
@@ -55,7 +59,7 @@
 
 										<div class="form-group">
                                             <label for="equip"><i class="fa fa-gear"></i> Our hob is:</label>
-                                            <select class="form-control">
+                                            <select class="form-control" id = "hobType">
                                                 <option ></option>
                                                 <option>Electric</option>
                                                 <option>Induction</option>
@@ -64,7 +68,7 @@
                                             </div>
                                         <div class="form-group">
                                                 <label for="equip"><i class="fa fa-gear"></i> Our kitchen has:</label>
-                                                <select class="form-control">
+                                                <select class="form-control" id="hobNumber">
                                                     <option ></option>
                                                     <option>2 hobs</option>
                                                     <option>3 hobs</option>
@@ -74,7 +78,7 @@
                                                 </div>
                                         <div class="form-group">
                                                 <label for="equip"><i class="fa fa-gear"></i> We have an oven:</label>
-                                                <select class="form-control">
+                                                <select class="form-control" id = "haveOven">
                                                     <option ></option>
                                                     <option>Yes</option>
                                                     <option>No</option>

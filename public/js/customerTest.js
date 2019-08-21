@@ -4,23 +4,35 @@ $(document).ready(function() {
 	// var updating = false;
   
   
-	// Getting jQuery references to the post body, title, form, and category select
-	var firstName = $("#firstName");
-	var lastNameInput = $("#lastName");
-	var emailInput = $("#email");
-	var phoneInput = $("#phone");
-	var locationInput = $("#location");
+	// // Getting jQuery references to the post body, title, form, and category select
+	// var firstName = $("#firstName");
+	// var lastNameInput = $("#lastName");
+	// var emailInput = $("#email");
+	// var phoneInput = $("#phone");
+	// var addressInput = $("#address");
+	// var cityInput = $("#city");
+	// var hobtype = $("#hobType");
+	// var cityInput = $("#city");
+	// var cityInput = $("#city");
+
+
 
 	postCategorySelect.val("Personal");
 	// Adding an event listener for when the data is submitted
 	$("#submit").click(function(){
 		event.preventDefault();
 		var newCustomer = {
-			lastName: lastNameInput.val().trim(),
-			firstname: firstName.val().trim(),
-			email: emailInput.val().trim(),
-			phone: phoneInput.val().trim(),
-			location: locationInput.val().trim()
+			lastName: $("#lastName").val().trim(),
+			firstname: $("#firstName").val().trim(),
+			email: $("#email").val().trim(),
+			phone: $("#phone").val().trim(),
+			address: $("#address").val().trim(),
+			city: $("#city").val().trim(),
+			hobType: $("#hobType").val().trim(),
+			hobNumber: $("#hobNumber").val().trim(),
+			Oven: $("#haveOven").val().trim(),
+			foodRes: $("#foodRes").val().trim(),
+			foodType: $("#foodType").val().trim(),
 		};
 		console.log(newCustomer);
 		// if (updating) {
