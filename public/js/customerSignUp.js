@@ -33,9 +33,19 @@ $(document).ready(function() {
 			hobNumber: $("#hobNumber").val().trim(),
 			Oven: $("#haveOven").val().trim(),
 			foodRes: $("#foodRes").val().trim(),
-			foodType: $("#foodType").val().trim(),
+			foodType: $("#foodType").val().trim()
 		};
 		console.log(newCustomer);
+
+		var newUser = {
+			userType:Customer,
+			email: $("#email").val().trim(),
+			password:$("password").val().trim()
+		};
+		console.log(newUser);
+
+
+
 		// if (updating) {
 		// 	newCustomer.id = CustomerId;
 		// 	update(newPost);
@@ -44,7 +54,8 @@ $(document).ready(function() {
 		// 	submitPost(newPost);
 		// }
 		submitCustomer(newCustomer);
-
+		submitUser(newUser);
+		
 	}); 
 
 
@@ -55,6 +66,38 @@ $(document).ready(function() {
 			console.log("new customer added ");
 		});
 	}
+
+	function submitUser(user) {
+		$.post("/api/signup", user)
+		  .then(function(data) {
+			window.location.replace("/customers");
+			// If there's an error, handle it by throwing up a bootstrap alert
+		  })
+		  .catch(handleLoginErr);
+	  }
+	
+	  function handleLoginErr(err) {
+		$("#alert .msg").text(err.responseJSON);
+		$("#alert").fadeIn(500);
+	  }
+	
+	
+	//apiroute file 
+	
+	//  app.post("/api/signup", function(req, res) {
+	// 	db.User.create({
+	// 	  userType: req.body.userType,
+	// 	  email: req.body.email,
+	// 	  password: req.body.password
+	
+	// 	})
+	// 	  .then(function() {
+	// 		res.redirect(307, "/api/login");
+	// 	  })
+	// 	  .catch(function(err) {
+	// 		res.status(401).json(err);
+	// 	  });
+	//   }); 
 
 });
   
