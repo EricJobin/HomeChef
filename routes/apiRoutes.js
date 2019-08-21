@@ -29,5 +29,27 @@ module.exports = function(app) {
 		res.json(req.user);
 		 
 		 
-	  });
+	});
+
+	//apiroute file for Chef Signup
+
+	app.post("/api/chefsignup", function(req, res) {
+		db.User.create({
+			chefBio: req.chefBio,
+			chefCity: req.chefCity,
+			chefPass: req.chefPass,
+			chefPic: req.chefPic,
+			emailChef: req.emailChef,
+			firstName: req.firstName,
+			lastName: req.lastName,
+			userType: "Chefs",
+		})
+			.then(function() {
+				res.redirect(307, "/api/login");
+			})
+			.catch(function(err) {
+				res.status(401).json(err);
+			});
+	});
+
 };
