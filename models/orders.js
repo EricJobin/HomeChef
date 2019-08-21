@@ -18,6 +18,9 @@ module.exports = function(sequelize,DataTypes){
 		},
 		noofPeople:{
 			type:DataTypes.INTEGER
+		},
+		status:{
+			type : DataTypes.STRING,
 		}
 		/*	createdAt:{   
 			type: DataTypes.DATE,
