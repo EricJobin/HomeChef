@@ -14,22 +14,17 @@ module.exports = function(sequelize,DataTypes){
 				len: [35]
 			}
 		},
-		email:{
+		emailChef:{
 			type: DataTypes.STRING
 		},   
-		location: {
-			type: DataTypes.STRING,
-        
-		},
-		rates:{
-			type: DataTypes.INTEGER
-		},
-		profilePic:{
+		chefCity: {
 			type: DataTypes.STRING,
 		},
-		bioData:{
+		chefPic:{
+			type: DataTypes.STRING,
+		},
+		chefBio:{
 			type: DataTypes.TEXT,
-
 		}
 		
 		/*
@@ -52,11 +47,8 @@ module.exports = function(sequelize,DataTypes){
 		Chefs.hasMany(models.Orders, {
 		  onDelete: "cascade"
 		});
-	  };	
-		
+	};	
 
-
-   
 	return Chefs;
 };
  
