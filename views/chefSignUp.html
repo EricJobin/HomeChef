@@ -7,7 +7,7 @@
     <title>HomeChef Chef Sign Up Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- Our CSS -->
-	<link rel="stylesheet" href="../public/styles/styles.css">
+	<link rel="stylesheet" href="styles/styles.css">
 	<script src="https://kit.fontawesome.com/314677fe35.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<!-- Our Java -->
-    <script src="../public/js/chefSignUp.js"></script>
+    <script src="/js/chefSignUp.js"></script>
 
 </head>
 <body>
@@ -31,52 +31,47 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12" id="bookdiv">
-									<form>
-										<div class="form-group">
-											<label for="userName"><i class="fas fa-user"></i> First Name</label>
-											<input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
-										</div>
-										<div class="form-group">
-											<label for="userName"><i class="fas fa-user"></i> Last Name</label>
-											<input type="text" class="form-control" id="firstName" placeholder="Enter your last name">
-										</div>
-										<div class="form-group">
-											<label for="chefemail"><i class="fas fa-envelope"></i> Email address</label>
-											<input type="email" class="form-control" id="chefemail" aria-describedby="emailHelp" placeholder="Enter email">
-										</div>
-										<div class="form-group">
-											<label for="userName"><i class="fas fa-image"></i> Picture Link</label>
-											<input type="text" class="form-control" id="userPic" placeholder="Show Customers your beautiful face">
-										</div>
-										<div class="form-group">
-											<label for="chefBio"><i class="fas fa-book"></i> Bio</label>
-											<textarea class="form-control" id="chefBio" rows="3" placeholder="Tell Customers about yourself and why they should choose you!"></textarea>
-										</div>
+								<form>
+									<div class="form-group">
+										<label for="firstName"><i class="fas fa-user"></i> First Name</label>
+										<input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+									</div>
+									<div class="form-group">
+										<label for="lastName"><i class="fas fa-user"></i> Last Name</label>
+										<input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+									</div>
+									<div class="form-group">
+										<label for="emailChef"><i class="fas fa-envelope"></i> Email address</label>
+										<input type="email" class="form-control" id="emailChef" placeholder="Enter email">
+									</div>
+									<div class="form-group">
+										<label for="chefPass"><i class="fas fa-unlock-alt"></i> Password</label>
+										<input type="password" class="form-control" id="chefPass" placeholder="Choose a Password">
+									</div>
+									<div class="form-group">
+										<label for="chefCity"><i class="fas fa-city"></i> City</label>
+										<input type="text" class="form-control" id="chefCity" placeholder="Enter what city you're working out of">
+									</div>
+									<div class="form-group">
+										<label for="chefPic"><i class="fas fa-image"></i> Picture Link</label>
+										<input type="text" class="form-control" id="chefPic" placeholder="Show Customers your beautiful face">
+									</div>
+									<div class="form-group">
+										<label for="chefBio"><i class="fas fa-book"></i> Bio</label>
+										<textarea class="form-control" id="chefBio" rows="3" placeholder="Tell Customers about yourself and why they should choose you!"></textarea>
+									</div>
 
-
-
-										<button type="button" class="btn btn-success" id="submit" data-toggle="modal" data-target="#myModal">
-											<i class="fas fa-glass-cheers fa-2x"></i>
-											Submit
-										</button>
-										
-									</form>
-								
-
-
+									<button type="button" class="btn btn-success" id="submit">
+										<i class="fas fa-glass-cheers fa-2x"></i>
+										Submit
+									</button>
+								</form>
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
 	</div>
-		
-
-        
-	
-
-
 </body>
 </html>

@@ -109,7 +109,7 @@ var bookdata = [
 // }
 
 //Render bookings data as Cards on Chef Home Page in #bookdiv
-console.log(bookdata);
+// console.log(bookdata);
 var viewid, clientInfo, eventlogger;
 
 function renderBookings() {
@@ -138,7 +138,6 @@ function renderBookings() {
 function popUpBookingModal(){
 	$(".bookingCard").on("click", function(){
 		eventlogger=event;
-		console.log(this);
 		$(".modal-title").empty();
 		$(".modal-body").empty();
 		//viewid extracts the place in the array where what we're looking at occurs
@@ -154,6 +153,6 @@ function popUpBookingModal(){
 }
 
 $(document).ready(function() {
-	renderBookings()
-	popUpBookingModal()
+	renderBookings();
+	popUpBookingModal();
 });

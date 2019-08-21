@@ -1,4 +1,5 @@
 var db = require("../models");
+var passport = require("../config/passport");
 
 module.exports = function(app) {
 	// Get all examples
@@ -21,4 +22,34 @@ module.exports = function(app) {
 			res.json(dbExample);
 		});
 	});
+
+	//Login Api 
+
+	app.post("/api/login", passport.authenticate("local"), function(req, res) {
+		res.json(req.user);
+		 
+		 
+	});
+
+	//apiroute file for Chef Signup
+
+	app.post("/api/chefsignup", function(req, res) {
+		db.User.create({
+			chefBio: req.chefBio,
+			chefCity: req.chefCity,
+			chefPass: req.chefPass,
+			chefPic: req.chefPic,
+			emailChef: req.emailChef,
+			firstName: req.firstName,
+			lastName: req.lastName,
+			userType: "Chefs",
+		})
+			.then(function() {
+				res.redirect(307, "/api/login");
+			})
+			.catch(function(err) {
+				res.status(401).json(err);
+			});
+	});
+
 };

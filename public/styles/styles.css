@@ -12,7 +12,6 @@ title{
   font-weight: 900;
   
   }
-
   /* viewport responsive text */
 .header {
   font-size:10vw !important;
@@ -33,7 +32,6 @@ title{
   display: flex;
   width: 60px;
 }
-
   .wrapper {
     margin-left: 50px;
     margin-right: 50px;
@@ -90,7 +88,6 @@ title{
       -ms-transform: translate(-50%,-50%);
           transform: translate(-50%,-50%);
 }
-/Users/jtkalych/A-Team/Restprog/HomeChef/Public Images/Flaveur-Restaurant-Nice-France.jpg
 .thumbnail img.portrait {
   width: 100%;
   height: auto;
@@ -102,8 +99,7 @@ title{
   background-position: center;
   /* background-repeat: no-repeat; */
   background-size: cover;
-  /* height: 680px;  */
-  
+  height: 670px; 
 }
 
 .blackO{
@@ -224,7 +220,6 @@ ul.socialIcons {
   background: #c92228;
   box-shadow: 0 0 12px #c92228;
 }
-
 .card{
   width: 100%;
   height:100%;
