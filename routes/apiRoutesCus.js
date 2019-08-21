@@ -65,8 +65,6 @@ module.exports = function(app) {
 		});
   });
   
-//testing routes===============================
-  app.
 
 
 };

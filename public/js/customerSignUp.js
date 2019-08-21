@@ -68,7 +68,7 @@ $(document).ready(function() {
 	}
 
 	function submitUser(user) {
-		$.post("/api/signup", user)
+		$.post("/api/customerSignUp", user)
 		  .then(function(data) {
 			window.location.replace("/customers");
 			// If there's an error, handle it by throwing up a bootstrap alert
@@ -82,22 +82,5 @@ $(document).ready(function() {
 	  }
 	
 	
-	//apiroute file 
-	
-	//  app.post("/api/signup", function(req, res) {
-	// 	db.User.create({
-	// 	  userType: req.body.userType,
-	// 	  email: req.body.email,
-	// 	  password: req.body.password
-	
-	// 	})
-	// 	  .then(function() {
-	// 		res.redirect(307, "/api/login");
-	// 	  })
-	// 	  .catch(function(err) {
-	// 		res.status(401).json(err);
-	// 	  });
-	//   }); 
-
 });
   
