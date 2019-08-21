@@ -55,6 +55,9 @@ module.exports = function(sequelize,DataTypes){
 		fdRestType:{
 			type:DataTypes.STRING
 		},
+		password:{
+			type:DataTypes.STRING
+		}
 		
 		/*	createdAt:{   
 			type: DataTypes.DATE,
