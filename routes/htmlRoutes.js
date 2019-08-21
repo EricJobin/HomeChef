@@ -41,4 +41,15 @@ module.exports = function(app) {
 		  res.sendFile(path.join(__dirname, "../views/login.html"));
 		}
 	  }); 	  
+
+	// Load Chef SignUp Pages
+	
+	app.get("/chefsignup",function(req,res){
+		res.sendFile(path.join(__dirname, "../views/chefSignUp.html"));			
+	});
+
+	// Load Customer Signup Pages
+	app.get("/customersignup",function(req,res){
+		res.sendFile(path.join(__dirname, "../views/cusSignUp.html"));			
+	});
 };

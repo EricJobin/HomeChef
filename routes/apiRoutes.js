@@ -1,4 +1,5 @@
 var db = require("../models");
+var passport = require("../config/passport");
 
 module.exports = function(app) {
 	// Get all examples
@@ -21,4 +22,12 @@ module.exports = function(app) {
 			res.json(dbExample);
 		});
 	});
+
+	//Login Api 
+
+	app.post("/api/login", passport.authenticate("local"), function(req, res) {
+		res.json(req.user);
+		 
+		 
+	  });
 };
