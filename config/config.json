@@ -1,7 +1,7 @@
 {
 	"development": {
-		"username": "newuser",
-		"password": "r00tr00t",
+		"username": "root",
+		"password": "",
 		"database": "homechef",
 		"host": "localhost",
 		"dialect": "mysql"
@@ -9,7 +9,7 @@
   },
   "development1": {
 	"username": "root",
-	"password": "P@ssword",
+	"password": "",
 	"database": "homechef",
 	"host": "localhost",
 	"dialect": "mysql"

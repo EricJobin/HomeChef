@@ -1,31 +1,15 @@
 $(document).ready(function() {
 
-	// Sets a flag for whether or not we're updating a post to be false initially
-	// var updating = false;
-  
-  
-	// // Getting jQuery references to the post body, title, form, and category select
-	// var firstName = $("#firstName");
-	// var lastNameInput = $("#lastName");
-	// var emailInput = $("#email");
-	// var phoneInput = $("#phone");
-	// var addressInput = $("#address");
-	// var cityInput = $("#city");
-	// var hobtype = $("#hobType");
-	// var cityInput = $("#city");
-	// var cityInput = $("#city");
 
-
-
-	postCategorySelect.val("Personal");
 	// Adding an event listener for when the data is submitted
-	$("#submit").click(function(){
+	$("#submit").on("click",function(){
 		event.preventDefault();
+		console.log("submit button pressed");
 		var newCustomer = {
 			lastName: $("#lastName").val().trim(),
 			firstname: $("#firstName").val().trim(),
 			email: $("#email").val().trim(),
-			password:$("password").val().trim(),
+			password:$("password").val(),
 			phone: $("#phone").val().trim(),
 			address: $("#address").val().trim(),
 			city: $("#city").val().trim(),
@@ -38,9 +22,9 @@ $(document).ready(function() {
 		console.log(newCustomer);
 
 		var newUser = {
-			userType:Customer,
+			userType:"Customer",
 			email: $("#email").val().trim(),
-			password:$("password").val().trim()
+			password:$("password").val()
 		};
 		console.log(newUser);
 
