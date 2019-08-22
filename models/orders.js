@@ -1,14 +1,8 @@
 module.exports = function(sequelize,DataTypes){
 	var Orders = sequelize.define("Orders",{
-		startdate: {
+		date: {
 			type: DataTypes.DATE,
 			allowNull: false,
-			
-		},
-		enddate: {
-			type: DataTypes.DATE,
-			allowNull: false,
-			
 		},
 		timing:{
 			type: DataTypes.STRING
