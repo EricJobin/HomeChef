@@ -4,18 +4,19 @@ module.exports = function(sequelize,DataTypes){
 			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
-				len: [35]
+				len: [0,35]
 			}
 		},
 		lastName: {
 			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
-				len: [35]
+				len: [0,35]
 			}
 		},
 		email:{
-			type: DataTypes.STRING
+			type: DataTypes.STRING,
+			allowNull: false,
 		},   
 		chefCity: {
 			type: DataTypes.STRING,
