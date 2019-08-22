@@ -57,7 +57,7 @@ $(document).ready(function() {
 	function submitUser(user) {
 		$.post("/api/customerSignUp", user)
 		  .then(function(data) {
-			window.location.replace("/customers");
+				window.location.replace("/customers");
 			// If there's an error, handle it by throwing up a bootstrap alert
 		  })
 		  .catch(handleLoginErr);
