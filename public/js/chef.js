@@ -1,7 +1,7 @@
 // Chef Logic for HomeChef
 
 // This function will check if there's any update to the database for the chef to see
-
+// ------------- Get Orders from DB - Not done --------------------------------------
 // router.get("/api/chef", function(req, res) {
 //   	burger.all(function(data) {
 // 		var chefBooking = {
@@ -24,7 +24,14 @@
 // 	});
 // });
 
-//Dummy Data for dev & testing
+// ------------ Update Order Status in database -------------------------------------
+
+// *****  MAKE PUT REQUEST HERE *********
+
+
+
+
+// ---------------  Dummy Data for dev & testing ----------------------------------
 var bookdata = [
 	{
 		client: "Andrew Anderson",
@@ -38,6 +45,7 @@ var bookdata = [
 		meal: "French",
 		diet: "none",
 		numPeople: "2",
+		status: "pending",
 	},
 	{
 		client: "Bob Brown",
@@ -51,6 +59,7 @@ var bookdata = [
 		meal: "Italian",
 		diet: "Gluten Free",
 		numPeople: "4",
+		status: "pending",
 	},
 	{
 		client: "Chad Conway",
@@ -64,6 +73,7 @@ var bookdata = [
 		meal: "Steak & Potatoes",
 		diet: "Peanut Allergy",
 		numPeople: "1",
+		status: "pending",
 	},
 	{
 		client: "Dave Dunway",
@@ -77,6 +87,7 @@ var bookdata = [
 		meal: "Steak & Potatoes",
 		diet: "Peanut Allergy",
 		numPeople: "1",
+		status: "pending",
 	},
 	{
 		client: "Eddie Edwards",
@@ -90,6 +101,7 @@ var bookdata = [
 		meal: "Steak & Potatoes",
 		diet: "Peanut Allergy",
 		numPeople: "1",
+		status: "pending",
 	}
 ];
 
@@ -107,6 +119,8 @@ var bookdata = [
 // 	diet: "",
 // 	numPeople: "",
 // }
+
+//------------------  End of Dummy Data Section ------------------------------------
 
 //Render bookings data as Cards on Chef Home Page in #bookdiv
 // console.log(bookdata);
