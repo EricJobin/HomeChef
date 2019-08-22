@@ -94,11 +94,17 @@ module.exports = function(app) {
 		});
 	});
 
-	//=========================routes for customer end =========
-
-
+//=========================routes for customer end =========
+//=========================routes for orders ===============
+	app.post("/api/order/",function(req, res) {
+		console.log(req.body);
+		db.Orders.create(req.body)
+			.then(function(dbOrders) {
+				res.json(dbOrders);
+			});
+	});
 		 
-
+//=========================routes for orders end ===============
 
 	//apiroute file for Chef Signup
 

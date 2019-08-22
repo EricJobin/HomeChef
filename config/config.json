@@ -9,7 +9,7 @@
   },
   "development": {
 	"username": "root",
-	"password": "P@ssword",
+	"password": "",
 	"database": "homechef",
 	"host": "localhost",
 	"dialect": "mysql"
