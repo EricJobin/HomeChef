@@ -5,7 +5,7 @@ module.exports = function(sequelize,DataTypes){
 			allowNull: false,
 			validate: {
 
-				len: [50]
+				len: [1,50]
 			}
 		},
 		lastName: {
@@ -13,7 +13,7 @@ module.exports = function(sequelize,DataTypes){
 			allowNull: false,
 			validate: {
 
-				len: [50]
+				len: [1,50]
 
 			}
 		},
@@ -21,13 +21,13 @@ module.exports = function(sequelize,DataTypes){
 			type: DataTypes.STRING,
 			allowNull: false,
 
-			validate:{
-				len: [50]
-			}
+			// validate:{
+			// 	len: [50]
+			// }
 
 		},   
 		phone:{
-			type: DataTypes.DECIMAL,
+			type: DataTypes.STRING,
 
 		},
 		city: {
@@ -38,19 +38,19 @@ module.exports = function(sequelize,DataTypes){
 			type: DataTypes.STRING,
 		},
 		stove: {
-			type: DataTypes.BOOLEAN,
+			type: DataTypes.STRING,
 					
 		},
 		hobs: {
-			type: DataTypes.INTEGER		
+			type: DataTypes.STRING		
 			
 		},
 		oven:{
-			type: DataTypes.BOOLEAN,
+			type: DataTypes.STRING,
 		},
 		
 		foodRest:{
-			type:DataTypes.BOOLEAN
+			type:DataTypes.STRING
 		},
 		fdRestType:{
 			type:DataTypes.STRING

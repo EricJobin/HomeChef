@@ -63,8 +63,9 @@ module.exports = function(app) {
 
 	// POST route for saving a new customer
 	app.post("/api/customers", function(req, res) {
-		console.log(req.body);
-		db.Customer.create(req.body)
+		console.dir(req.body);
+		// console.log("object of user:"+ req.body);
+		db.Customers.create(req.body)
 			.then(function(dbCustomer) {
 				res.json(dbCustomer);
 			});
