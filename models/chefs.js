@@ -14,7 +14,7 @@ module.exports = function(sequelize,DataTypes){
 				len: [35]
 			}
 		},
-		emailChef:{
+		email:{
 			type: DataTypes.STRING
 		},   
 		chefCity: {

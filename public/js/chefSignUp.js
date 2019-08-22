@@ -11,8 +11,9 @@ function signUpChef(newChef) {
 }
 
 function handleLoginErr(err) {
-	$("#alert .msg").text(err.responseJSON);
-	$("#alert").fadeIn(500);
+	// $("#alert .msg").text(err.responseJSON);
+	// $("#alert").fadeIn(500);
+	console.log(err);
 }
 
 // ----------------------- Creating New chef from form input ---------------------
@@ -21,7 +22,7 @@ function createChef() {
 	var newChef ={
 		firstName: $("#firstName").val().trim(),
 		lastName: $("#lastName").val().trim(),
-		emailChef: $("#emailChef").val().trim(),
+		email: $("#emailChef").val().trim(),
 		chefPic: $("#chefPic").val().trim(),
 		chefBio: $("#chefBio").val().trim(),
 		chefCity: $("#chefCity").val().trim(),
