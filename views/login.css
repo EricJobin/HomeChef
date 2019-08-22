@@ -1,0 +1,17 @@
+
+title{
+     font-family: 'Beth Ellen', cursive !important ;
+}
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+ background: url(https://goop.com/wp-content/uploads/2016/09/RAD4364.jpg);
+
+}
+
+.main-wrap{
+    background: rgba(0, 0, 0, .7);
+}
+
+.bookReq{
+ background: rgba(0,0,0,0.7);
+}
