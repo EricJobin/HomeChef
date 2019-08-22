@@ -144,6 +144,15 @@ module.exports = function(app) {
 		}
 	  });
 
+	  app.get("/api/user_email",function(req,res){
+		db.Customers.findAll({
+			where:{
+				email: req.params
+		}}).then(function(dbCustomer) {
+				res.json(dbCustomer);
+			});
+	  });
+
 	    // Route for logging user out
 	app.get("/logout", function(req, res) {
 		req.logout();

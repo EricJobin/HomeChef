@@ -19,6 +19,19 @@
 
 </head>
 <body>
+    <div class="container">
+    <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <a class="navbar-brand" href="/logout">
+                    Logout
+                </a>
+                </div>
+            </div>
+            </nav>
+    </div>
+
+
     <div id="container">
                 <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
@@ -66,6 +79,70 @@
             </div>
         </div>
     </div>
+<!-- 
+    <div class="container">
+        <div id="userInfo">This user's data:</div>
+    </div> -->
+
+    
+    <div class="container">
+            <!-- Have new Client Requests Here -->
+            <div class="row"> 
+                <div class="col-12 bookReq">
+                    <div class="card shadow">
+                        <div class="card-header">
+                            <h3>Booking Requests</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12" id="bookdiv">
+                                    Sorry, no new booking requests.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    
+            <!-- Show Booked Clients & Calendar Here-->
+            <div class="row"> 
+                <div class="col-12">
+                    <div class="card shadow">
+                        <div class="card-header">
+                            <h3>Accepted Bookings</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row" id="bookedOrders">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal -->
+        <div id="myBookingModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Client</h2>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Intentionally left Blank -->
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Intentionally left Blank -->
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
 
 </body>
 </html>
