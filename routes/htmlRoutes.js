@@ -1,5 +1,6 @@
 //var db = require("../models");
 var path = require("path");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
 	// Load index page
@@ -51,5 +52,11 @@ module.exports = function(app) {
 	// Load Customer Signup Pages
 	app.get("/customersignup",function(req,res){
 		res.sendFile(path.join(__dirname, "../views/cusSignUp.html"));			
+	});
+	app.get("/customers",isAuthenticated, function(req,res){
+		res.sendFile(path.join(__dirname, "../views/custPage.html"));
+	});
+	app.get("/customers",isAuthenticated, function(req,res){
+		res.sendFile(path.join(__dirname, "../views/custPage.html"));
 	});
 };

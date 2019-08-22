@@ -1,5 +1,5 @@
 {
-	"development": {
+	"development1": {
 		"username": "newuser",
 		"password": "r00tr00t",
 		"database": "homechef",
@@ -7,7 +7,7 @@
 		"dialect": "mysql"
 	
   },
-  "development1": {
+  "development": {
 	"username": "root",
 	"password": "P@ssword",
 	"database": "homechef",
