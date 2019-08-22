@@ -1,12 +1,12 @@
 module.exports = function(sequelize,DataTypes){
 	var Orders = sequelize.define("Orders",{
 		startdate: {
-			type: DataTypes.DATE,
+			type: DataTypes.STRING,
 			allowNull: false,
 			
 		},
 		enddate: {
-			type: DataTypes.DATE,
+			type: DataTypes.STRING,
 			allowNull: false,
 			
 		},
@@ -17,7 +17,7 @@ module.exports = function(sequelize,DataTypes){
 			type:DataTypes.STRING	
 		},
 		noofPeople:{
-			type:DataTypes.INTEGER
+			type:DataTypes.STRING
 		},
 		status:{
 			type : DataTypes.STRING,
