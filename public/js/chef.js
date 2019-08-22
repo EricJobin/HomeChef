@@ -163,7 +163,6 @@ function takeBookings(){
 
 	$(document).on("click", "#takeOrder, #rejectOrder", function() {
 		var orderID = $("#rejectOrder").data("id")
-		// console.log("click");
 		$(`#card${orderID}`).remove()
 		if(this.id == "takeOrder"){
 			console.log(`Order ${orderID} taken`);
