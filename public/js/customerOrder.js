@@ -1,14 +1,15 @@
 $(document).ready(function() {
 
-// Adding an event listener for when the data is submitted
+	// Adding an event listener for when the data is submitted
 	$("#submit").click(function(){
+		
 		event.preventDefault();
 		var newOrder = {
-			startDate: $("#startDate").val().trim(),
-			endDate: $("#endDate").val().trim(),
+			startdate: $("#startDate").val().trim(),
+			enddate: $("#endDate").val().trim(),
 			timing: $("#timing").val().trim(),
-			meal:$("meal").val().trim(),
-			noOfPeople: $("#noOfPeople").val().trim(),
+			meal:$("#meal").val().trim(),
+			noofPeople: $("#noOfPeople").val().trim(),
 			status: "pending"
 		};
 		console.log(newOrder);

@@ -43,7 +43,7 @@ module.exports = function(app) {
 	//=========================routes for customer=========
 	// GET route for getting all of the customers
 	app.get("/api/customers/", function(req, res) {
-		db.Customer.findAll({})
+		db.Customers.findAll({})
 			.then(function(dbCustomer) {
 				res.json(dbCustomer);
 			});
@@ -51,7 +51,7 @@ module.exports = function(app) {
 
 	// Get route for retrieving a single customer
 	app.get("/api/customers/:id?", function(req, res) {
-		db.Customer.findOne({
+		db.Customers.findOne({
 			where: {
 				id: req.params.id
 			}
