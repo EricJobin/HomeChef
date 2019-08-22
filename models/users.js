@@ -11,7 +11,8 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		email: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allowNull: false, //kept getting message: "User.email cannot be null", - ej, Still got: 401 (Unauthorized) after commenting this out, but no error reported in json response???
+			// allowNull: true,
 			unique: true,
 			validate: {
 				isEmail: true
@@ -20,7 +21,8 @@ module.exports = function(sequelize, DataTypes) {
 		// The password cannot be null
 		password: {
 			type: DataTypes.STRING,
-			allowNull: false
+			// allowNull: false //comenting out for dev testing
+			allowNull: true
 		}
 	});
 	// Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
