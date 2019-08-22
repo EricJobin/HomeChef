@@ -110,39 +110,29 @@ var bookdata = [
 
 //Render bookings data as Cards on Chef Home Page in #bookdiv
 // console.log(bookdata);
-var viewid, clientInfo, eventlogger;
 
 function renderBookings() {
 	if (bookdata.length > 0){
-		var rowCount =1;
-		var colCount =0;
 		$("#bookdiv").empty();
-		$("#bookdiv").append(`<div class="row" id="bookRow${rowCount}"></div>`);
+		$("#bookdiv").append(`<div class="row" id="bookRow"></div>`);
 		for (var x = 0; x < bookdata.length; x++){
-			$(`#bookRow${rowCount}`).append(`
-				<div class="col-3">
+			$(`#bookRow`).append(`
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 					<div class="card shadow">
 						<div class="card-body bookingCard" data-toggle="modal" data-target="#myBookingModal" id="booking${x}">
 							<h4>${bookdata[x].client}</h4> 
 				</div></div></div>`);
-			colCount++;
-			if (colCount == 4){
-				colCount = 0;
-				rowCount++
-				$("#bookdiv").append(`<div class="row" id="bookRow${rowCount}"></div>`);
-			}
 		}
 	}
 }
 
 function popUpBookingModal(){
 	$(".bookingCard").on("click", function(){
-		eventlogger=event;
 		$(".modal-title").empty();
 		$(".modal-body").empty();
 		//viewid extracts the place in the array where what we're looking at occurs
-		viewid = parseInt(this.id.replace('booking',''))
-		clientInfo= bookdata[viewid];
+		var viewid = parseInt(this.id.replace('booking',''))
+		var clientInfo= bookdata[viewid];
 		$(".modal-title").append(`${clientInfo.client}<br>`);
 		$(".modal-body").append(`Location: ${clientInfo.address}, ${clientInfo.city}<br>`);
 		$(".modal-body").append(`When: ${clientInfo.time} on ${clientInfo.date}<br>`);
