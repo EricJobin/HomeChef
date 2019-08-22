@@ -1,13 +1,13 @@
 {
-	"development1": {
+	"development": {
 		"username": "newuser",
-		"password": "",
+		"password": "r00tr00t",
 		"database": "homechef",
 		"host": "localhost",
 		"dialect": "mysql"
 	
   },
-  "development": {
+  "development1": {
 	"username": "root",
 	"password": "P@ssword",
 	"database": "homechef",
