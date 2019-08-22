@@ -54,7 +54,7 @@ module.exports = function(app) {
 		res.sendFile(path.join(__dirname, "../views/cusSignUp.html"));			
 	});
 	app.get("/customers",isAuthenticated, function(req,res){
-		res.sendFile(path.join(__dirname, "../views/custPage.html"));
+		res.sendFile(path.join(__dirname, "../views/customerPage.html"));
 	});
 	app.get("/customers",isAuthenticated, function(req,res){
 		res.sendFile(path.join(__dirname, "../views/custPage.html"));

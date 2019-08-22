@@ -43,7 +43,7 @@ module.exports = function(app) {
 	//=========================routes for customer=========
 	// GET route for getting all of the customers
 	app.get("/api/customers/", function(req, res) {
-		db.Customer.findAll({})
+		db.Customers.findAll({})
 			.then(function(dbCustomer) {
 				res.json(dbCustomer);
 			});
@@ -51,7 +51,7 @@ module.exports = function(app) {
 
 	// Get route for retrieving a single customer
 	app.get("/api/customers/:id?", function(req, res) {
-		db.Customer.findOne({
+		db.Customers.findOne({
 			where: {
 				id: req.params.id
 			}
@@ -95,8 +95,8 @@ module.exports = function(app) {
 		});
 	});
 
-//=========================routes for customer end =========
-//=========================routes for orders ===============
+	//=========================routes for customer end =========
+	//=========================routes for orders ===============
 	app.post("/api/order/",function(req, res) {
 		console.log(req.body);
 		db.Orders.create(req.body)
@@ -105,7 +105,7 @@ module.exports = function(app) {
 			});
 	});
 		 
-//=========================routes for orders end ===============
+	//=========================routes for orders end ===============
 
 	//apiroute file for Chef Signup
 

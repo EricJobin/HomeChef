@@ -11,7 +11,7 @@ module.exports = function(sequelize,DataTypes){
 			type:DataTypes.STRING	
 		},
 		noofPeople:{
-			type:DataTypes.INTEGER
+			type:DataTypes.STRING
 		},
 		status:{
 			type : DataTypes.STRING,
