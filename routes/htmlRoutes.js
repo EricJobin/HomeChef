@@ -9,9 +9,21 @@ module.exports = function(app) {
 			res.render("food", {
 				msg: "Welcome!",
 				examples: dbExamples
+		
 			});*/
-		res.sendFile(path.join(__dirname, "../views/food.html"));	
+		if(req.user)
+		{	
+			if (req.user.userType === "Customers") {
+				res.redirect("/customers");
+		 }
+	    else if (req.user.userType === "Chefs"){
+				res.redirect("/chefs");
+		 }
+		} 
+		else{	
+			res.sendFile(path.join(__dirname, "../views/food.html"));	
 		//});
+		}
 	});
 
 	
@@ -32,11 +44,13 @@ module.exports = function(app) {
 	app.get("/login", function(req, res) {
 		// If the user already has an account send them to the members page
 		console.log(req.user);
-		if (req.userType === "Customers") {
+		if(req.user){
+			if (req.user.userType === "Customers") {
 		  res.redirect("/customers");
-		}
-		else if (req.userType === "Chefs"){
+			}
+			else if (req.user.userType === "Chefs"){
 		  res.redirect("/chefs");
+			}
 		}
 		else{
 		  res.sendFile(path.join(__dirname, "../views/login.html"));
@@ -53,9 +67,9 @@ module.exports = function(app) {
 	app.get("/customersignup",function(req,res){
 		res.sendFile(path.join(__dirname, "../views/cusSignUp.html"));			
 	});
-	// app.get("/customers",isAuthenticated, function(req,res){ //This looks like it's a duplication of the html path below. I wrote the custPage.html file, and I think that's the one we're going to use - EJ
-	// 	res.sendFile(path.join(__dirname, "../views/customerPage.html"));
-	// });
+	 app.get("/chefs",isAuthenticated, function(req,res){ //This looks like it's a duplication of the html path below. I wrote the custPage.html file, and I think that's the one we're going to use - EJ
+	 	res.sendFile(path.join(__dirname, "../views/chefPage.html"));
+	 });
 	app.get("/customers",isAuthenticated, function(req,res){
 		res.sendFile(path.join(__dirname, "../views/custPage.html"));
 	});

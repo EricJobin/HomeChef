@@ -4,7 +4,7 @@
 function signUpChef(newChef) {
 	$.post("/api/chefsignup", newChef)
 		.then(function(data) {
-			window.location.replace("/chefhome");
+			window.location.replace("/chefs");
 			// If there's an error, handle it by throwing up a bootstrap alert
 		})
 		.catch(handleLoginErr);
