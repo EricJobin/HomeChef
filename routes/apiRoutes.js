@@ -110,23 +110,11 @@ module.exports = function(app) {
 	//apiroute file for Chef Signup
 
 	app.post("/api/chefsignup", function(req, res) {
-		console.log(req.body);
-		db.User.create({
-			chefBio: req.chefBio,
-			chefCity: req.chefCity,
-			chefPass: req.chefPass,
-			chefPic: req.chefPic,
-			email: req.emailChef,
-			firstName: req.firstName,
-			lastName: req.lastName,
-			userType: "Chefs",
-		})
-			.then(function() {
-				res.redirect(307, "/api/login");
-			})
-			.catch(function(err) {
-				res.status(401).json(err);
-			});
+		console.dir(req.body);
+		db.Chefs.create(req.body)
+		.then(function(dbChef) {
+			res.json(dbChef);
+		});
 	});
 
 	 // Route for getting some data about our user to be used client side

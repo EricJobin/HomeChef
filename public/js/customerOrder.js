@@ -2,16 +2,15 @@ $(document).ready(function() {
 	// debugger;
 	// displayCustomer();
 
-	renderBookings();
-	popUpBookingModal();
-	takeBookings()
+	// renderBookings();
+	// popUpBookingModal();
+	// takeBookings()
 	// Adding an event listener for when the data is submitted
 	$("#submit").click(function(){
-		
+		console.log("hello");
 		event.preventDefault();
 		var newOrder = {
-			startdate: $("#startDate").val().trim(),
-			enddate: $("#endDate").val().trim(),
+			date: $("#orderDate").val(),
 			timing: $("#timing").val().trim(),
 			meal:$("#meal").val().trim(),
 			noofPeople: $("#noOfPeople").val().trim(),

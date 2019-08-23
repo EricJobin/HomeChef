@@ -4,21 +4,20 @@ $(document).ready(function() {
 	// Adding an event listener for when the data is submitted
 	$("#submit").on("click",function(){
 		event.preventDefault();
-		console.log("fn:"+$("#firstName").val().trim());
-		console.log("LN:"+$("#lastName").val().trim());
+
 		var newCustomer = {
 			lastName: $("#lastName").val().trim(),
 			firstName: $("#firstName").val().trim(),
 			email: $("#email").val().trim(),
 			password:$("#password").val().trim(),
 			phone: $("#phone").val().trim(),
-			address: $("#address").val().trim(),
+			Address: $("#address").val().trim(),
 			city: $("#city").val().trim(),
-			hobType: $("#hobType").val().trim(),
-			hobNumber: $("#hobNumber").val().trim(),
-			Oven: $("#haveOven").val().trim(),
-			foodRes: $("#foodRes").val().trim(),
-			foodType: $("#foodType").val().trim()
+			stove: $("#hobType").val().trim(),
+			hobs: $("#hobNumber").val().trim(),
+			oven: $("#haveOven").val().trim(),
+			foodRest: $("#foodRes").val().trim(),
+			fdRestType: $("#foodType").val().trim()
 
 		};
 		

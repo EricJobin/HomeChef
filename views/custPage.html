@@ -2,15 +2,22 @@
 <html lang="en">
 
 <head>
-	<title>Passport Authentication</title>
+	<title>Client Home</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"> -->
 	<!-- 1st style local Dev link, 2nd deployment -->
 	<!-- <link href="../public/styles/styles.css" rel="stylesheet"> -->
-	<!-- <link href="styles/style.css" rel="stylesheet"> -->
+	<link href="styles/style.css" rel="stylesheet">
+	<style>
+		.chefPic{
+			object-fit:contain;
+			width:100%;
+			max-height: 33vh;
+        }
+	</style>
+
 </head>
 
 <body>
@@ -26,63 +33,70 @@
 	</nav>
 
 	<div class="container">
-			<!-- Have Area Chefs Here -->
-			<div class="row"> 
-				<div class="col-12">
-					<div class="card shadow chefsInAreaCard">
-						<div class="card-header">
-							<h3>Booking Requests</h3>
-						</div>
-						<div class="card-body">
-							<div class="row" id="areaChefs">
-								<div class="col-12" >
-									Sorry, We couldn't find any Chefs in your area.
-								</div>
-							</div>
+		<!-- Have Area Chefs Here -->
+		<div class="row"> 
+			<div class="col-12">
+				<div class="card shadow chefsInAreaCard">
+					<div class="card-header">
+						<h3>Hot Chefs in your Area!</h3>
+					</div>
+					<div class="card-body">
+						<div class="row" id="areaChefs">
+							
+								Sorry, We couldn't find any Chefs in your area.
+							
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 			
-	
-			<!-- Make form to book a Chef Here -->
-			<div class="row"> 
-				<div class="col-12">
-					<div class="card shadow">
-						<div class="card-header">
-							<h3>Order Dinner Service At Home!</h3>
-						</div>
-						<div class="card-body">
-							<div class="row" id="makeOrder">
-								<div class="col-12" id="bookdiv">
-									<form>
-										<div class="form-group">
-											<label for="orderDate"><i class="fas fa-user"></i> What day would you like to be served?</label>
-											<input type="date" class="form-control" id="orderDate">
-										</div>
-										<div class="form-group">
-											<label for="orderTime"><i class="fas fa-user"></i> What time would you like your service?</label>
-											<input type="time" class="form-control" id="orderTime">
-										</div>
-										<div class="form-group">
-											<label for="meal"><i class="fas fa-user"></i> What sort of meal do you want?</label>
-											<input type="text" class="form-control" id="meal" placeholder="Enter your first name">
-										</div>
-										<div class="form-group">
-											<label for="noOfPeople"><i class="fas fa-user"></i> How many people will there be?</label>
-											<input type="number" class="form-control" id="noOfPeople" placeholder="Enter your first name" >
-										</div>
-									</form>
-
-
+		<!-- Make form to book a Chef Here -->
+		<div class="row"> 
+			<div class="col-12">
+				<div class="card shadow">
+					<div class="card-header">
+						<h3>Order Dinner Service At Home!</h3>
+					</div>
+					<div class="card-body">
+						<div class="row" id="makeOrder">
+							<div class="col-12" id="bookdiv">
+								<!-- <div id="chosenChefName">
+									You must choose a chef before placing an Order<br>
+								</div> -->
+								<div class="form-group">
+									<label for="chosenChefName"><i class="fa fa-cutlery"></i> Chosen Chef</label>
+									<input type="text" class="form-control" id="chosenChefName" placeholder="You Must Choose a Chef Before Placing an Order" disabled>
 								</div>
-
+								<form>
+									<div class="form-group">
+										<label for="orderDate"><i class="fas fa-calendar-alt"></i> What day would you like to be served?</label>
+										<input type="date" class="form-control" id="orderDate">
+									</div>
+									<div class="form-group">
+										<label for="orderTime"><i class="fas fa-clock"></i> What time would you like your service?</label>
+										<input type="time" class="form-control" id="orderTime">
+									</div>
+									<div class="form-group">
+										<label for="meal"><i class="fa fa-cutlery"></i> What sort of meal do you want?</label>
+										<input type="text" class="form-control" id="meal" placeholder="e.g. French, Italian, Vegitarian, etc.">
+									</div>
+									<div class="form-group">
+										<label for="noOfPeople"><i class="fas fa-users"></i> How many people will there be?</label>
+										<input type="number" class="form-control" id="noOfPeople" placeholder="2" min="1">
+									</div>
+									<button type="button" class="btn btn-success" id="submit" disabled>
+										<i class="fas fa-glass-cheers fa-2x"></i>
+										Submit
+									</button>
+								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 		
 		<!-- Modal -->
 		<div id="myChefModal" class="modal fade" role="dialog">
@@ -105,8 +119,17 @@
 			</div>
 		</div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Script Libraries -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/314677fe35.js"></script>
 	<script type="text/javascript" src="js/members.js"></script>
+	<!-- Our Java 1st link for local testing, 2nd for deployment-->
+	<script src="../public/js/customerPage.js"></script>
+	<!-- <script src="/js/customerPage.js"></script> -->
 
 </body>
 

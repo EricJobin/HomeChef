@@ -53,9 +53,9 @@ module.exports = function(app) {
 	app.get("/customersignup",function(req,res){
 		res.sendFile(path.join(__dirname, "../views/cusSignUp.html"));			
 	});
-	app.get("/customers",isAuthenticated, function(req,res){
-		res.sendFile(path.join(__dirname, "../views/customerPage.html"));
-	});
+	// app.get("/customers",isAuthenticated, function(req,res){ //This looks like it's a duplication of the html path below. I wrote the custPage.html file, and I think that's the one we're going to use - EJ
+	// 	res.sendFile(path.join(__dirname, "../views/customerPage.html"));
+	// });
 	app.get("/customers",isAuthenticated, function(req,res){
 		res.sendFile(path.join(__dirname, "../views/custPage.html"));
 	});
