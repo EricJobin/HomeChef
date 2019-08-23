@@ -65,7 +65,7 @@ function popUpChefModal(){
 		$(".modal-title").append(`${chefInfo.firstName} ${chefInfo.lastName}`);
 		$(".modal-body").append(`<img class="chefPic" src=${chefInfo.chefPic}><br>`);
 		$(".modal-body").append(`${chefInfo.chefBio}`);
-		$(".modal-footer").append(`<button type="button" class="btn btn-outline-success" data-dismiss="modal" id="bookChef" data-id="${viewid}">Choose this Chef</button>`);
+		$(".modal-footer").append(`<button type="button" class="btn btn-outline-success" data-dismiss="modal" id="bookChef" data-array=${chefNum} data-id="${viewid}">Choose this Chef</button>`);
 
 	});
 }
@@ -73,16 +73,15 @@ function popUpChefModal(){
 function chooseChef(){
 	$(document).on("click", "#bookChef", function() {
 		chosenChef=this.dataset.id;
-		console.log(chosenChef);
 		$("#submit").removeAttr("disabled");
+		$("#chosenChefName").removeAttr("placeholder");
+		$("#chosenChefName").attr("placeholder", `${chefData[this.dataset.array].firstName} ${chefData[this.dataset.array].lastName}`);
 	});
 }
 
 function getOrder(){
 	$("#submit").click(function(){
 		event.preventDefault();
-		console.log("click")
-
 		var newOrder = {
 			chefid: chosenChef,
 			orderDate: $("#orderDate").val(),
