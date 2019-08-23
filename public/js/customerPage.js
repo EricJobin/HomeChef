@@ -64,7 +64,8 @@ $.get("/api/chefs/", function(data) {
 });
 
 setTimeout( function(){
-    renderChefs()
+	renderChefs();
+	popUpChefModal();
   }, 30 );
 
 }
@@ -83,7 +84,7 @@ function renderChefs() {
 			$(`#areaChefs`).append(`
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id=card${x}>
 					<div class="card shadow">
-						<div class="card-body chefCard" data-toggle="modal" data-target="#myChefModal" data-arraynum="${x}" id="chef${chefData[x].id}">
+						<div class="chefCard card-body" data-toggle="modal" data-target="#myChefModal" data-arraynum="${x}" id="chef${chefData[x].id}">
 							<img class="chefPic" src=${chefData[x].chefPic}><br>${chefData[x].firstName} ${chefData[x].lastName} 
 				</div></div></div>`);
 		}
@@ -94,7 +95,7 @@ function renderChefs() {
 function popUpChefModal(){
 	$(".chefCard").on("click", function(){
 
-
+		debugger;
 		$(".modal-title").empty();
 		$(".modal-body").empty();
 		$(".modal-footer").empty();
@@ -148,9 +149,9 @@ function getOrder(){
 $(document).ready(function() {
 	getData();
 	// renderChefs();
-	popUpChefModal();
+	//popUpChefModal();
 	chooseChef();
 	getOrder();
-
+	
 });
   
