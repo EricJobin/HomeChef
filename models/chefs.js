@@ -26,6 +26,9 @@ module.exports = function(sequelize,DataTypes){
 		},
 		chefBio:{
 			type: DataTypes.TEXT,
+		},
+		password:{
+			type:DataTypes.STRING
 		}
 		
 		/*
