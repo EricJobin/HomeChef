@@ -28,13 +28,23 @@ $(document).ready(function() {
 	// loginUser does a post to our "api/login" route and if successful, redirects us the the members page
 	function loginUser(userType,email, password) {
 	  $.post("/api/login", {
-			userType: userType,
 			email: email,
-			password: password
+			password: password,
+			userType: userType
 	  })
 			.then(function() {
-			  window.location.replace("/customers");
-		  // If there's an error, log the error
+			  if(userType === "Customers")
+			  {		
+					console.log("user type is :" +userType);	
+					window.location.replace("/customers");
+			  }
+			  else if(userType === "Chefs")
+			  {
+					console.log("user type is :" +userType);	
+			  window.location.replace("/chefs");
+
+			  }
+			  // If there's an error, log the error
 			})
 			.catch(function(err) {
 		  console.log(err);

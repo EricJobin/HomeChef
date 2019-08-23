@@ -13,6 +13,7 @@ module.exports = function(app) {
 	app.post("/api/examples", function(req, res) {
 		db.Example.create(req.body).then(function(dbExample) {
 			res.json(dbExample);
+			
 		});
 	});
 
@@ -21,12 +22,8 @@ module.exports = function(app) {
 		db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
 			res.json(dbExample);
 		});
-	});
 
-	//Login Api 
-
-	app.post("/api/login", passport.authenticate("local"), function(req, res) {
-		res.json(req.user);
+	
 		 
 	  });
 
@@ -112,9 +109,9 @@ module.exports = function(app) {
 	app.post("/api/chefsignup", function(req, res) {
 		console.dir(req.body);
 		db.Chefs.create(req.body)
-		.then(function(dbChef) {
-			res.json(dbChef);
-		});
+			.then(function(dbChef) {
+				res.json(dbChef);
+			});
 	});
 
 	
@@ -145,15 +142,21 @@ module.exports = function(app) {
 		db.Customers.findAll({
 			where:{
 				email: req.params
-		}}).then(function(dbCustomer) {
-				res.json(dbCustomer);
-			});
+			}}).then(function(dbCustomer) {
+			res.json(dbCustomer);
+		});
 	  });
 
 	    // Route for logging user out
 	app.get("/logout", function(req, res) {
 		req.logout();
 		res.redirect("/");
+	});
+
+	//Login Api 
+
+	app.post("/api/login", passport.authenticate("local"), function(req, res) {	
+		res.json(req.user);
 	});
 
 };

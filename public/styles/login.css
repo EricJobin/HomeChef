@@ -1,15 +1,26 @@
+body{
 
-title{
+}
+h2{
      font-family: 'Beth Ellen', cursive !important ;
+     color: black;
+     font-weight: 900;
 }
 body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
- background: url(https://goop.com/wp-content/uploads/2016/09/RAD4364.jpg);
-
+ background: url(https://cdn.splendia.com/images/collection/78/hotels_in_italy_with_fine_dining_michelin_star_restaurants_512175_1200x800.jpg);
+ font-family: 'Quattrocento Sans', sans-serif;
+ color:black;
+text-shadow: black;
+font-weight: bold;
+background-size: cover;
+background-color: transparent
 }
 
+
+
 .main-wrap{
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, .5);
 }
 
 .bookReq{

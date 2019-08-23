@@ -1,35 +1,35 @@
 // JS for rendering Chefs in Area and taking a Client order - EJ
 
 // ---------------  Dummy Data for dev & testing ----------------------------------
-// var chefData = [
-// 	{
-// 		id: 4,
-// 		firstName: "Matty",
-// 		lastName: "Matheson",
-// 		emailChef: "matty@hotmail.com",
-// 		chefCity: "Toronto",
-// 		chefPic: "http://apparelmagazine.co.nz/restaurantandcafe/wp-content/uploads/sites/3/2019/06/Matty-Matheson.jpeg",
-// 		chefBio: "Matty The Flavor Lord Matheson was the executive chef of Parts & Labour, and regularly appeared on Vice's show Munchies and hosts Viceland's It's Suppertime.",
-// 	},
-// 	{
-// 		id: 3,
-// 		firstName: "Susur",
-// 		lastName: "Lee",
-// 		emailChef: "slee@hotmail.com",
-// 		chefCity: "Toronto",
-// 		chefPic: "https://1843784937.rsc.cdn77.org/wp-content/uploads/2017/08/Susur-Lee-400x200.jpg",
-// 		chefBio: "Susur's awards include the prestigious CAA Five Diamond Award, Cannes, France; the American Academy of Hospitality Services' 5 Diamond Award and being named one of the Ten Chefs of the Millennium by Food & Wine.",
-// 	},
-// 	{
-// 		id: 6,
-// 		firstName: "Swedish",
-// 		lastName: "Chef",
-// 		emailChef: "bork@hotmail.com",
-// 		chefCity: "Toronto",
-// 		chefPic: "https://americanhistory.si.edu/sites/default/files/blog_files/a/6a00e553a80e10883401a3fcc7aa9f970b-800wi.png",
-// 		chefBio: "Børk! Børk! Børk!",
-// 	},
-// ];
+var chefData = [
+	{
+		id: 4,
+		firstName: "Matty",
+		lastName: "Matheson",
+		emailChef: "matty@hotmail.com",
+		chefCity: "Toronto",
+		chefPic: "http://apparelmagazine.co.nz/restaurantandcafe/wp-content/uploads/sites/3/2019/06/Matty-Matheson.jpeg",
+		chefBio: "Matty The Flavor Lord Matheson was the executive chef of Parts & Labour, and regularly appeared on Vice's show Munchies and hosts Viceland's It's Suppertime.",
+	},
+	{
+		id: 3,
+		firstName: "Susur",
+		lastName: "Lee",
+		emailChef: "slee@hotmail.com",
+		chefCity: "Toronto",
+		chefPic: "https://1843784937.rsc.cdn77.org/wp-content/uploads/2017/08/Susur-Lee-400x200.jpg",
+		chefBio: "Susur's awards include the prestigious CAA Five Diamond Award, Cannes, France; the American Academy of Hospitality Services' 5 Diamond Award and being named one of the Ten Chefs of the Millennium by Food & Wine.",
+	},
+	{
+		id: 6,
+		firstName: "Swedish",
+		lastName: "Chef",
+		emailChef: "bork@hotmail.com",
+		chefCity: "Toronto",
+		chefPic: "https://americanhistory.si.edu/sites/default/files/blog_files/a/6a00e553a80e10883401a3fcc7aa9f970b-800wi.png",
+		chefBio: "Børk! Børk! Børk!",
+	},
+];
 
 //------------------  End of Dummy Data Section ------------------------------------
 
@@ -64,9 +64,10 @@ $.get("/api/chefs/", function(data) {
 });
 
 setTimeout( function(){
-    renderChefs()
+	renderChefs();
+	popUpChefModal();
   }, 30 );
-
+ 
 }
 
 
@@ -83,7 +84,7 @@ function renderChefs() {
 			$(`#areaChefs`).append(`
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id=card${x}>
 					<div class="card shadow">
-						<div class="card-body chefCard" data-toggle="modal" data-target="#myChefModal" data-arraynum="${x}" id="chef${chefData[x].id}">
+						<div class="chefCard card-body" data-toggle="modal" data-target="#myChefModal" data-arraynum="${x}" id="chef${chefData[x].id}">
 							<img class="chefPic" src=${chefData[x].chefPic}><br>${chefData[x].firstName} ${chefData[x].lastName} 
 				</div></div></div>`);
 		}
@@ -94,7 +95,7 @@ function renderChefs() {
 function popUpChefModal(){
 	$(".chefCard").on("click", function(){
 
-
+		debugger;
 		$(".modal-title").empty();
 		$(".modal-body").empty();
 		$(".modal-footer").empty();
@@ -126,6 +127,7 @@ function chooseChef(){
 function getOrder(){
 	$("#submit").click(function(){
 		event.preventDefault();
+		
 		var newOrder = {
 			chefid: chosenChef,
 			orderDate: $("#orderDate").val(),
@@ -135,22 +137,22 @@ function getOrder(){
 			status: "pending"
 		};
 		console.log(newOrder);
-		// submitOrder(newOrder);
+		submitOrder(newOrder);
 	}); 
 }
 
-// function submitOrder(order) {
-// 	$.post("/api/order/", order, function() {
-// 		console.log("new order added ");
-// 	});
-// }
+function submitOrder(order) {
+	$.post("/api/order/", order, function() {
+		console.log("new order added ");
+	});
+}
 
 $(document).ready(function() {
 	getData();
 	// renderChefs();
-	popUpChefModal();
+	//popUpChefModal();
 	chooseChef();
 	getOrder();
-
+	
 });
   
