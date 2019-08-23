@@ -54,7 +54,7 @@ function createChef() {
 }
 function createUser() {
 	var newUser ={
-		userType:"Chef",
+		userType:"Chefs",
 		email: $("#emailChef").val().trim(),
 		password: $("#chefPass").val().trim(),
 	};
