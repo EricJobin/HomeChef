@@ -29,9 +29,7 @@ module.exports = function(sequelize,DataTypes){
 		},
 		password:{
 			type:DataTypes.STRING
-		}
-		
-		/*
+		},
 		createdAt:{   
 			type: DataTypes.DATE,
 			allowNull: false,
@@ -42,7 +40,7 @@ module.exports = function(sequelize,DataTypes){
 			allowNull: false,
 			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")	
 		}
-		*/
+		
 	});
 	
 	Chefs.associate = function(models) {

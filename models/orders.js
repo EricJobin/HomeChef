@@ -15,8 +15,8 @@ module.exports = function(sequelize,DataTypes){
 		},
 		status:{
 			type : DataTypes.STRING,
-		}
-		/*	createdAt:{   
+		},
+		createdAt:{   
 			type: DataTypes.DATE,
 			allowNull: false,
 			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")
@@ -25,7 +25,6 @@ module.exports = function(sequelize,DataTypes){
 			type: DataTypes.DATE,
 			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")	
 		}
-      */  
   
 	});
 	Orders.associate = function(models) {

@@ -23,6 +23,15 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			// allowNull: false //comenting out for dev testing
 			allowNull: false
+		},
+		createdAt:{   
+			type: DataTypes.DATE,
+			allowNull: false,
+			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")
+		},
+		updatedAt:{
+			type: DataTypes.DATE,
+			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")	
 		}
 	});
 	// Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database

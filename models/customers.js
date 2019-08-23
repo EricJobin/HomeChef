@@ -57,9 +57,8 @@ module.exports = function(sequelize,DataTypes){
 		},
 		password:{
 			type:DataTypes.STRING
-		}
-		
-		/*	createdAt:{   
+		},
+		createdAt:{   
 			type: DataTypes.DATE,
 			allowNull: false,
 			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")
@@ -69,7 +68,7 @@ module.exports = function(sequelize,DataTypes){
 			allowNull: false,
 			defaultValue: sequelize.literal("CURRENT_TIMESTAMP")	
 		}
-		*/
+		
       
 	});
 	Customers.associate = function(models) {
