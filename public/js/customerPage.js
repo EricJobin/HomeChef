@@ -65,7 +65,7 @@ $.get("/api/chefs/", function(data) {
 
 setTimeout( function(){
 	renderChefs();
-	popUpChefModal();
+	// popUpChefModal();
   }, 30 );
  
 }
@@ -150,7 +150,7 @@ function submitOrder(order) {
 $(document).ready(function() {
 	getData();
 	// renderChefs();
-	//popUpChefModal();
+	popUpChefModal();
 	chooseChef();
 	getOrder();
 	
