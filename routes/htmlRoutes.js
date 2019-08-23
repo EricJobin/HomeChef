@@ -59,4 +59,7 @@ module.exports = function(app) {
 	app.get("/customers",isAuthenticated, function(req,res){
 		res.sendFile(path.join(__dirname, "../views/custPage.html"));
 	});
+	app.get("/chefs",isAuthenticated, function(req,res){
+		res.sendFile(path.join(__dirname, "../views/chefPage.html"));
+	});
 };
