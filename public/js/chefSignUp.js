@@ -32,10 +32,10 @@ function handleLoginErr(err) {
 // }
 
 // function createChefPassword() {
-	// var newChef ={
-	// 	chefPass: $("#chefPass").val().trim(),
-	// };
-	// return newChef;
+// var newChef ={
+// 	chefPass: $("#chefPass").val().trim(),
+// };
+// return newChef;
 // }
 
 // =================Brian edit====================
@@ -72,16 +72,16 @@ function signUpChef(chef) {
 function signUpUser(user) {
 	$.post("/api/customerSignUp", user)
 	  .then(function(data) {
-		window.location.replace("/chefhome");
+			window.location.replace("/chefhome");
 		// If there's an error, handle it by throwing up a bootstrap alert
 	  })
 	  .catch(handleLoginErr);
-  }
+}
 
-  function handleLoginErr(err) {
+function handleLoginErr(err) {
 	$("#alert .msg").text(err.responseJSON);
 	$("#alert").fadeIn(500);
-  }
+}
 
 
 

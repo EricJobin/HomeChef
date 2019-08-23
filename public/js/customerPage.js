@@ -32,6 +32,10 @@ var chefData = [
 ];
 //------------------  End of Dummy Data Section ------------------------------------
 
+// -----------------  Global Varialbes  --------------------------------------------
+var chosenChef; //chosenChef will be used to keep track of which chef has been chosen by the user to make a booking with, and it will be the chef id primary key number
+
+// Renders cards of local Chefs -- From database when complete, currently dummy data
 function renderChefs() {
 	if (chefData.length > 0){
 		$("#areaChefs").empty();
@@ -46,6 +50,7 @@ function renderChefs() {
 	}
 }
 
+// Populates Modal with data from selected chef card
 function popUpChefModal(){
 	$(".chefCard").on("click", function(){
 		$(".modal-title").empty();
@@ -65,25 +70,31 @@ function popUpChefModal(){
 	});
 }
 
+function chooseChef(){
+	$(document).on("click", "#bookChef", function() {
+		chosenChef=this.dataset.id;
+		console.log(chosenChef);
+		$("#submit").removeAttr("disabled");
+	});
+}
 
+function getOrder(){
+	$("#submit").click(function(){
+		event.preventDefault();
+		console.log("click")
 
-// function getOrder(){
-// 	$("#submit").click(function(){
-// 		event.preventDefault();
-// 		var newOrder = {
-// 			chefid: x, //put stuff here
-// 			date: $("#startDate").val().trim(),
-// 			timing: $("#timing").val().trim(),
-// 			meal:$("meal").val().trim(),
-// 			noOfPeople: $("#noOfPeople").val().trim(),
-// 			status: "pending"
-// 		};
-// 		console.log(newOrder);
-
-// 		submitOrder(newOrder);
-		
-// 	}); 
-// }
+		var newOrder = {
+			chefid: chosenChef,
+			orderDate: $("#orderDate").val(),
+			orderTime: $("#orderTime").val(),
+			meal:$("#meal").val().trim(),
+			noOfPeople: $("#noOfPeople").val(),
+			status: "pending"
+		};
+		console.log(newOrder);
+		// submitOrder(newOrder);
+	}); 
+}
 
 // function submitOrder(order) {
 // 	$.post("/api/order/", order, function() {
@@ -94,9 +105,8 @@ function popUpChefModal(){
 $(document).ready(function() {
 	renderChefs();
 	popUpChefModal();
-
-	// getOrder();
-
+	chooseChef();
+	getOrder();
 
 });
   
