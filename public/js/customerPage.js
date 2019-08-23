@@ -16,7 +16,7 @@ var chefData = [
 		firstName: "Susur",
 		lastName: "Lee",
 		emailChef: "slee@hotmail.com",
-		chefCity: "Toronto",
+		chefCity: "slee@hotmail.com",
 		chefPic: "https://1843784937.rsc.cdn77.org/wp-content/uploads/2017/08/Susur-Lee-400x200.jpg",
 		chefBio: "Susur's awards include the prestigious CAA Five Diamond Award, Cannes, France; the American Academy of Hospitality Services' 5 Diamond Award and being named one of the Ten Chefs of the Millennium by Food & Wine.",
 	},
