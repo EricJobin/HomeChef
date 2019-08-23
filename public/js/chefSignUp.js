@@ -72,7 +72,7 @@ function signUpChef(chef) {
 function signUpUser(user) {
 	$.post("/api/customerSignUp", user)
 	  .then(function(data) {
-			window.location.replace("/chefhome");
+		window.location.replace("/chefs");
 		// If there's an error, handle it by throwing up a bootstrap alert
 	  })
 	  .catch(handleLoginErr);

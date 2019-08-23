@@ -114,6 +114,15 @@ module.exports = function(app) {
 			});
 	});
 
+	
+	// GET route for getting all of the chefs
+	app.get("/api/chefs/", function(req, res) {
+		db.Chefs.findAll({})
+			.then(function(dbChef) {
+				res.json(dbChef);
+			});
+	});
+
 	 // Route for getting some data about our user to be used client side
 	 app.get("/api/user_data", function(req, res) {
 		if (!req.user) {
