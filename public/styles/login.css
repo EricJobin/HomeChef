@@ -1,23 +1,18 @@
-body{
-
-}
 h2{
      font-family: 'Beth Ellen', cursive !important ;
      color: black;
      font-weight: 900;
 }
 body{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
- background: url(https://cdn.splendia.com/images/collection/78/hotels_in_italy_with_fine_dining_michelin_star_restaurants_512175_1200x800.jpg);
- font-family: 'Quattrocento Sans', sans-serif;
- color:black;
-text-shadow: black;
-font-weight: bold;
-background-size: cover;
-background-color: transparent
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+	background: url(../images/login.jpg);
+	font-family: 'Quattrocento Sans', sans-serif;
+	color:black;
+	text-shadow: black;
+	font-weight: bold;
+	background-size: cover;
+	background-color: transparent;
 }
-
-
 
 .main-wrap{
     background: rgba(0, 0, 0, .5);
@@ -25,4 +20,9 @@ background-color: transparent
 
 .bookReq{
  background: rgba(0,0,0,0.7);
+}
+.card{
+	padding: 2%;
+	margin: 3%;
+	background: rgba(255,255,255,.6);
 }

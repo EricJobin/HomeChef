@@ -5,15 +5,15 @@
 		"database": "homechef",
 		"host": "localhost",
 		"dialect": "mysql"
-  },
-  "development1": {
-	"username": "root",
-	"password": "P@ssword",
-	"database": "homechef",
-	"host": "localhost",
-	"dialect": "mysql"
+	},
+	"development1": {
+		"username": "root",
+		"password": "P@ssword",
+		"database": "homechef",
+		"host": "localhost",
+		"dialect": "mysql"
 
-},
+	},
 	"test": {
 		"username": "root",
 		"password": null,
