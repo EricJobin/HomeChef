@@ -190,61 +190,56 @@ body {
   background:#564162;
 } */
 
-/* 
+
 ul.socialIcons {
-  padding: 0;
-  text-align: center;
+	padding: 0;
+	text-align: center;
 }
 .socialIcons li {
-  background: yellow;
-  list-style: none;
-  display: inline-block;
-  margin: 8px;
-  margin-top: 5%;
-  border-radius: 2em;
-  overflow:hidden;
+	background: yellow;
+	list-style: none;
+	display: inline-block;
+	margin: 8px;
+	margin-top: 5%;
+	border-radius: 2em;
+	overflow:hidden;
 }
 .socialIcons li a {
-  display: block;
-  padding: .5em;
-  max-width: 2.3em;
-  min-width: 2.3em;
-  height: 2.3em;
-  white-space: nowrap;
-  line-height: 1.5em;
-  transition:.5s;
-  text-decoration: none;
-  font-family: 'Quattrocento Sans', sans-serif;
-  color: #fff;
+	display: block;
+	padding: .5em;
+	max-width: 2.3em;
+	min-width: 2.3em;
+	height: 2.3em;
+	white-space: nowrap;
+	line-height: 1.5em;
+	transition:.5s;
+	text-decoration: none;
+	font-family: 'Quattrocento Sans', sans-serif;
+	color: #fff;
 }
 .socialIcons li i {
-  margin-right:.5em;
+	margin-right:.5em;
 }
 .socialIcons li:hover a {
-  max-width:200px;
-  padding-right:1em;
-  z-index: 100;
+	max-width:200px;
+	padding-right:1em;
 }
 .socialIcons .facebook {
-  background: #3b5998;
-  box-shadow: 0 0 12px #3b5998;
-  z-index: 100;
+	background: #3b5998;
+	box-shadow: 0 0 12px #3b5998;
 }
 .socialIcons .twitter {
-  background: #00aced;
-  box-shadow: 0 0 12px #00aced;
-  z-index: 100;
+	background: #00aced;
+	box-shadow: 0 0 12px #00aced;
 }
 .socialIcons .instagram {
-  background: #cd486b;
-  box-shadow: 0 0 12px #cd486b;
-  z-index: 100;
+	background: #cd486b;
+	box-shadow: 0 0 12px #cd486b;
 }
 .socialIcons .pinterest {
-  background: #c92228;
-  box-shadow: 0 0 12px #c92228;
-  z-index: 100;
-} */
+	background: #c92228;
+	box-shadow: 0 0 12px #c92228;
+}
 
 .card{
   width: 100%;
@@ -254,7 +249,25 @@ ul.socialIcons {
 }
 
 h1{ 
-	font-family: 'Beth Ellen', cursive !important;
+	font-family: 'Beth Ellen', cursive;
+	color:rgb(255, 244, 244);
+	text-shadow: 2px 2px 8px rgb(8, 14, 8);
+}
+h2{ 
+	color:rgb(255, 244, 244);
+	text-shadow: 2px 2px 8px rgb(8, 14, 8);
+	font-size: 1.5rem;
+}
+h3{ 
+	color:rgb(108, 117, 125);
+	margin: 0.5rem 0;
+    font-size: 0.9rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+}
+
+ul{
+	padding: 0;
 }
 
 /* footer{
