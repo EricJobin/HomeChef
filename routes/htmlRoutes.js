@@ -15,10 +15,10 @@ module.exports = function(app) {
 		{	
 			if (req.user.userType === "Customers") {
 				res.redirect("/customers");
-		 }
+			}
 	    else if (req.user.userType === "Chefs"){
 				res.redirect("/chefs");
-		 }
+			}
 		} 
 		else{	
 			res.sendFile(path.join(__dirname, "../views/food.html"));	
