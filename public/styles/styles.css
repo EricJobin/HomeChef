@@ -1,152 +1,18 @@
-/* title{ This seems to do nothing
-	color:grey;
-	font-size: 20px;
-} */
-
 body {
-/* font-family: 'Beth Ellen', cursive ; */
 	font-size: 20px;
-	/* background-color: black; */
 	font-style: bold;
 	font-weight: 900;
 }
 
-/* viewport responsive text */
-/* .header {
-	font-size:10vw !important;
-} */
-
-/* .menu-layout { This class doesn't exist
-  background-color:transparent !important; 
-  margin-top:10%;
-} */
-
-/* .col-lg-4 {
-  padding-bottom: 10px !important;
-} */
-
-/* .fa-li { display: none !important; } */
-
-/* .logo{
-  display: flex;
-  width: 60px;
-} */
-
-/* .wrapper {
-	margin-left: 50px;
-	margin-right: 50px;
-	margin-top: 50px; 
-} */
-
-/* .btn-search {
-	background: #424242;
-	border-radius: 12px;
-	color:black;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #1c1c1c;
-}
-
-.btn-search:link, .btn-search:visited {
-	color:black;
-}
-.btn-search:active, .btn-search:hover {
-	background: #1c1c1c;
-	color:black;
-} */
-
-/* .row{
-	display: flex;
-	flex-wrap: wrap;
-	padding: 0 4px;
-}
-
-.column{
-	flex: 50%;
-	max-width: 50%;
-	padding:0 4px;
-} */
-
-
-/* .column img{
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-} */
-
-/* .thumbnail {
-  position: relative;
- height: 300px;
-  overflow: hidden;
-  border: 3px solid black;
-  padding: 3px;
-}
-.thumbnail img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 100%;
-  width: auto;
-  -webkit-transform: translate(-50%,-50%);
-      -ms-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
-}
-.thumbnail img.portrait {
-  width: 100%;
-  height: auto;
-} */
-
-/* --------------------------------------------------------------------------------------------------------- */
-
 .box {
-  background-image: url("../images/homepage.png");
-  position: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  background-color: rgb(100,75,60);
-  /* background-color: rgb(200,200,200);
-  background-blend-mode: darken; */
+	background-image: url("../images/homepage.png");
+	position: center;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	background-color: rgb(100,75,60);
 }
-
-/* .blackO{
-	position: relative;
-	width:100%;
-	height:100%;
-	background-color: rgba(0,0,0,.4);
-	color:rgb(199, 194, 194);
-	text-shadow: 2px 2px 8px rgb(8, 14, 8);
-}  */
-
-/* ------------------------------------------------------------------------------------------------------- */
-
-/* section.pricing {
-  background: #080808;
-  background: linear-gradient(to right black );
-  list-style-type: none;
-} */
-
-/* .pricing .card {
-  border: none;
-  border-radius: 1rem;
-  transition: all 0.2s;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
-  list-style-type: none;
-} */
-
-.card {
-	border: none;
-	border-radius: 1rem;
-	transition: all 0.2s;
-	box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
-	list-style-type: none;
-}
-
-/* .pricing hr {
-  margin: 1.5rem 0;
-  list-style-type: none;
-} */
 
 .pricing .card-title {
   margin: 0.5rem 0;
@@ -185,11 +51,6 @@ body {
   opacity: 0.7;
   transition: all 0.2s;
 }
-
-/* body { Body is in here twice
-  background:#564162;
-} */
-
 
 ul.socialIcons {
 	padding: 0;
@@ -242,10 +103,14 @@ ul.socialIcons {
 }
 
 .card{
-  width: 100%;
-  height:100%;
-  background-color: rgba(255,255,255,.4)
-  /* opacity: 0.5; */
+	width: 100%;
+	height:100%;
+	background-color: rgba(255,255,255,.4);
+	border: none;
+	border-radius: 1rem;
+	transition: all 0.2s;
+	box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
+	list-style-type: none;
 }
 
 h1{ 
@@ -259,7 +124,8 @@ h2{
 	font-size: 1.5rem;
 }
 h3{ 
-	color:rgb(108, 117, 125);
+	color:rgb(255, 244, 244);
+	text-shadow: 2px 2px 8px rgb(8, 14, 8);
 	margin: 0.5rem 0;
     font-size: 0.9rem;
     letter-spacing: .1rem;
@@ -269,20 +135,3 @@ h3{
 ul{
 	padding: 0;
 }
-
-/* footer{
-	padding: 0px;
-	background-color: transparent;
-	padding-top: 0%;
-	border-block: 0%;
-	
-} */
-
-
-/* Test CSS */
-
-/* Canary test, this div turned red */
-/* .display-1{
-	color: red;
-	background-color:red;
-} */
