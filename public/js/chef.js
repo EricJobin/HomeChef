@@ -181,9 +181,9 @@
 
 $(document).ready(function() {
 	getOrder();
-	 renderBookings();
-	 popUpBookingModal();
-	 takeBookings();
+	// renderBookings();
+	// popUpBookingModal();
+	// takeBookings();
 });
 
 //------------------  server data render Section ------------------------------------

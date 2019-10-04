@@ -39,45 +39,14 @@ function getData(){
 
 	$.get("/api/chefs/", function(data) {
 		console.log(data);
-		// for(var i =0;i<data.length;i++){
-		// 	var id = data[i].id;
-		// 	var fn = data[i].firstName;
-		// 	var ln = data[i].lastName;
-		// 	var em = data[i].email;
-		// 	var city = data[i].chefCity;
-		// 	var pic = data[i].chefPic;
-		// 	var bio = data[i].chefBio;
-
-		// 	var newchef = new chef(id,fn,ln,em,city,pic,bio);
-		// 	function chef(id,first,last,email,city,pic,bio){
-		// 		this.id =id;
-		// 		this.firstName = first;
-		// 		this.lastName =last;
-		// 		this.emailChef = email;
-		// 		this.chefCity = city;
-		// 		this.chefPic = pic;
-		// 		this.chefBio = bio;
-		// 	}
-		// 	console.log(newchef);
-		// 	chefData.push(newchef);
-		// }
 		chefData = data;
-		// console.log(chefData)
+
 	}).then(
 		function(){
-			// console.log("in then statement");
 			renderChefs()
 		}
-	)
-
-	// setTimeout( function(){
-	// 	renderChefs();
-	// 	// popUpChefModal();
-	// }, 30 );
- 
+	) 
 }
-
-
 
 // -----------------  Global Varialbes  --------------------------------------------
 var chosenChef; //chosenChef will be used to keep track of which chef has been chosen by the user to make a booking with, and it will be the chef id primary key number
@@ -130,16 +99,23 @@ function chooseChef(){
 	});
 }
 
+// This function takes data from the order form and puts it into the submitOrder function
 function getOrder(){
 	$("#submit").click(function(){
 		event.preventDefault();
 		
 		var newOrder = {
-			chefid: chosenChef,
-			orderDate: $("#orderDate").val(),
-			orderTime: $("#orderTime").val(),
+			// chefid: chosenChef,
+			// orderDate: $("#orderDate").val(),
+			// orderTime: $("#orderTime").val(),
+			// meal:$("#meal").val().trim(),
+			// noOfPeople: $("#noOfPeople").val(),
+			// status: "pending"
+			foreignKey: chosenChef,
+			date: $("#orderDate").val(),
+			timing: $("#orderTime").val(),
 			meal:$("#meal").val().trim(),
-			noOfPeople: $("#noOfPeople").val(),
+			noofPeople: $("#noOfPeople").val(),
 			status: "pending"
 		};
 		console.log(newOrder);
@@ -147,11 +123,13 @@ function getOrder(){
 	}); 
 }
 
+// Sends off order to db for Chef
 function submitOrder(order) {
 	$.post("/api/order/", order, function() {
 		console.log("new order added ");
 	});
 }
+// ***NOTE: Order creates but chef & customer ids are not entered ***
 
 $(document).ready(function() {
 	getData();
