@@ -13,7 +13,7 @@ Users just need to fill out a short one page form to begin using the service.
 
 ### Log In
 
-![LoginPage](./readmepics/chefsignup.png?raw=true "Login Page")
+![LoginPage](./readmepics/login.png?raw=true "Login Page")
 
 Upon returning to the service, a customer just needs to login to be taken to their account.
 
